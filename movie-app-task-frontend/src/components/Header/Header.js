@@ -19,7 +19,7 @@ function Header() {
 
   const guestLinks = (
     <div className="topnav" id="myTopnav">
-       <a href="register">Register</a>
+      <a href="register">Register</a>
       <a href="login">Login</a>
       <a href="/" className="active">
         Home
@@ -28,7 +28,7 @@ function Header() {
       <a href="#!" className="icon" onClick={myFunction}>
         <i className="fa fa-bars" aria-hidden="true"></i>
       </a>
-      <img className="logo"src={logo} alt="logo img"></img>
+      <img className="logo" src={logo} alt="logo img"></img>
       <h2>VIKING MOVIE APP</h2>
     </div>
   );
@@ -39,7 +39,7 @@ function Header() {
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
       ></link>
-<Fragment>{guestLinks}</Fragment>
+      <Fragment>{guestLinks}</Fragment>
     </nav>
   );
 }

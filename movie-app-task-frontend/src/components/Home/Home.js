@@ -19,7 +19,6 @@ export default function Home() {
     }
   };
   const [movies, setMovies] = useState([]);
-  const [media, setMedia] = useState([]);
   const [series, setSeries] = useState([]);
 
 
@@ -32,13 +31,16 @@ export default function Home() {
   useEffect(() => {
     getTop10Movies();
   }, []);
-  const url = "https://localhost:5001/"
+  const url = "https://localhost:5001/api/"
 
 
   const getTop10Movies = () => {
     return axios.get(`${url}media/ten_movies`).then((response) => {
       console.log(response.data);
       setMovies(response.data);
+    })
+    .catch(function (error) {
+      console.log(error.toJSON());
     });
   };
 
@@ -50,30 +52,33 @@ export default function Home() {
     return axios.get(`${url}media/ten_series`).then((response) => {
       console.log(response.data);
       setSeries(response.data);
+    }) 
+    .catch(function (error) {
+      console.log(error.toJSON());
     });
   };
 
 
-  const LoadMoreMovies = ()=> {
-    return  axios.get(`${url}media/all_movies`).then((response) => {
+  const LoadMoreMovies = () => {
+    return axios.get(`${url}media/all_movies`).then((response) => {
       console.log(response.data);
       setMovies(response.data);
+    }) .catch(function (error) {
+      console.log(error.toJSON());
     });
   };
 
-  const LoadMoreSeries = ()=> {
-      return  axios.get(`${url}media/all_series`).then((response) => {
-        console.log(response.data);
-        setSeries(response.data);
-      });
-    };
-  const LoadAllMedia = ()=> {
-    return  axios.get(`${url}media/all`).then((response) => {
+  const LoadMoreSeries = () => {
+    return axios.get(`${url}media/all_series`).then((response) => {
       console.log(response.data);
-      setMedia(response.data);
+      setSeries(response.data);
+    }) 
+    .catch(function (error) {
+      console.log(error.toJSON());
     });
   };
-  
+
+
   return (
     <div className="App">
       <Search placeholder="Search for Movie Title …" ></Search>

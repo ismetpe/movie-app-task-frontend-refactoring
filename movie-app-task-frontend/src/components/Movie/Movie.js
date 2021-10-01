@@ -23,7 +23,7 @@ const Movie = (props) => {
     4.5: 'Excellent',
     5: 'Excellent+',
   };
-  
+
   const useStyles = makeStyles({
     root: {
       width: 200,
@@ -35,20 +35,16 @@ const Movie = (props) => {
 
   const [value, setValue] = React.useState(3);
   const [hover, setHover] = React.useState(-1);
-  const classes = useStyles();
-
-
 
   const url = "https://localhost:5001/"
 
+  const addRating = (value, id) => {
+    return axios.post(`https://localhost:5001/rating/Add`, { rating_value: value, mediaId: id }).then((response) => {
+      console.log(value + " " + id);
+      setValue(value);
+    });
+  };
 
-  const addRating = (value,id) => {
-   return axios.post(`https://localhost:5001/rating/Add`,{rating_value: value, mediaId:id}).then((response) => {
-     console.log(value + " " + id);
-     setValue(value);
-   });
- };
-  
   return (
     <Card  >
       <Image src={props.imageURL} wrapped ui={false} className="img" />
@@ -67,14 +63,14 @@ const Movie = (props) => {
           {props.description}
         </Card.Description>
       </Card.Content>
-      
+
       <Rating
         name={props.id}
         value={value}
         precision={0.5}
         onChange={(event, newValue) => {
 
-          addRating(newValue,props.id)
+          addRating(newValue, props.id)
           setValue(newValue);
         }}
         onChangeActive={(event, newHover) => {

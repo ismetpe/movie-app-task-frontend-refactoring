@@ -1,15 +1,15 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:300,400,700,800");
 
-.container{
+.container {
   width: 100%;
   height: 600px;
   padding-top: 100px;
 }
-.itemcont{
-    padding-right:15px;
-    padding-left:15px;
-    margin-right:auto;
-    margin-left:auto
+.itemcont {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
 }
 .itms {
   font-family: "Montserrat", helvetica, arial, sans-serif;
@@ -32,7 +32,7 @@ button:focus {
 .movie-card {
   background-size: contain;
   background-repeat: no-repeat;
-  width:100%;
+  width: 100%;
   max-width: 800px;
   height: 100%;
   max-height: 300px;
@@ -53,9 +53,9 @@ button:focus {
   }
 }
 .movie-card:hover {
- transform: scale(1.02);
- transition: all 0.4s;
-  }
+  transform: scale(1.02);
+  transition: all 0.4s;
+}
 .movie-card[data-movie="IT1"] {
   background-image: url(https://files.mtssnetwork.ga/cdn//n/ext-img/nGsNruW3W27V6r4gkyc3iiEGsKR.jpg);
 }
@@ -69,7 +69,12 @@ button:focus {
   width: 100%;
   height: 100%;
   border-radius: 8px;
-  background: linear-gradient(to right, rgba(42, 159, 255, 0.2) 0%, #212120 60%, #212120 100%);
+  background: linear-gradient(
+    to right,
+    rgba(42, 159, 255, 0.2) 0%,
+    #212120 60%,
+    #212120 100%
+  );
   background-blend-mode: multiply;
   position: absolute;
   top: 0;
@@ -79,7 +84,12 @@ button:focus {
 }
 @media screen and (max-width: 600px) {
   .movie-card__overlay {
-    background: linear-gradient(to bottom, rgba(42, 159, 255, 0.2) 0%, #212120 60%, #212120 100%);
+    background: linear-gradient(
+      to bottom,
+      rgba(42, 159, 255, 0.2) 0%,
+      #212120 60%,
+      #212120 100%
+    );
   }
 }
 .movie-card__share {
@@ -95,8 +105,6 @@ button:focus {
   }
 }
 
-
-
 .glow-on-hover {
   width: 220px;
   height: 50px;
@@ -111,11 +119,22 @@ button:focus {
 }
 
 .glow-on-hover:before {
-  content: '';
-  background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
   position: absolute;
   top: -2px;
-  left:-2px;
+  left: -2px;
   background-size: 400%;
   z-index: -1;
   filter: blur(5px);
@@ -123,12 +142,12 @@ button:focus {
   height: calc(100% + 4px);
   animation: glowing 20s linear infinite;
   opacity: 0;
-  transition: opacity .3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
   border-radius: 10px;
 }
 
 .glow-on-hover:active {
-  color: #000
+  color: #000;
 }
 
 .glow-on-hover:active:after {
@@ -141,7 +160,7 @@ button:focus {
 
 .glow-on-hover:after {
   z-index: -1;
-  content: '';
+  content: "";
   position: absolute;
   width: 100%;
   height: 100%;
@@ -152,8 +171,13 @@ button:focus {
 }
 
 @keyframes glowing {
-  0% { background-position: 0 0; }
-  50% { background-position: 400% 0; }
-  100% { background-position: 0 0; }
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
 }
-
